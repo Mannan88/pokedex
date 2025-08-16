@@ -1,5 +1,5 @@
 
-````markdown
+
 # 🧬 Pokedex App (Vite + React)
 
 A simple standalone Pokédex web app built with **Vite** and **React**. It displays a list of all Pokémon, includes a search functionality, and shows basic Pokémon details on card click. [more upgrades coming soon!!]
@@ -30,7 +30,7 @@ A simple standalone Pokédex web app built with **Vite** and **React**. It displ
 ```bash
 git clone https://github.com/your-username/pokedex.git
 cd pokedex
-````
+```
 
 2. **Install dependencies:**
 
@@ -101,7 +101,6 @@ This is just the beginning! Here's what's coming next:
 * 💾 **Offline support (PWA)**
 * 🔥 **Pokémon team builder**
 * 👤 **User accounts + saved teams (with Firebase or Supabase)**
-* 🌐 **i18n (multilingual support)**
 
 ---
 
@@ -145,5 +144,3 @@ MIT License. Free to use and modify.
 ### 🔗 Live Demo
 
 [👉 Click here to try the live app](https://mannan88.github.io/pokedex/)
-
-`
