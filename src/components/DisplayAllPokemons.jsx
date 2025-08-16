@@ -8,8 +8,8 @@ function DisplayAllPokemons() {
   const [loading, setLoading] = useState(true);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const pokemonsPerPage = 20; 
-  const totalPokemons = 1302; 
+  const pokemonsPerPage = 20;
+  const totalPokemons = 1302;
   const totalPages = Math.ceil(totalPokemons / pokemonsPerPage);
 
   useEffect(() => {
@@ -41,29 +41,37 @@ function DisplayAllPokemons() {
   }, [currentPage]);
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-4">All Pokémons</h1>
+    <div className="p-6">
+  <h1 className="text-4xl font-extrabold mb-8 text-gray-800 border-b-2 border-red-500 pb-2 inline-block">
+    Pokédex
+  </h1>
 
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <>
-          <ol className="grid gap-4 grid-cols-3">
-            {pokemon.map((each_pokemon) => (
-              <li key={each_pokemon.id}>
-                <PokeCard pokemon={each_pokemon} />
-              </li>
-            ))}
-          </ol>
-
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={(page) => setCurrentPage(page)}
-          />
-        </>
-      )}
+  {loading ? (
+    <div className="relative h-100 w-full">
+      <div className="absolute top-1/2 left-1/2 loader-div"></div>
     </div>
+  ) : (
+    <>
+      <div className="mb-8">
+        <ol className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
+          {pokemon.map((each_pokemon) => (
+            <li key={each_pokemon.id} >
+              <PokeCard pokemon={each_pokemon} />
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div className="flex justify-center mt-8">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
+      </div>
+    </>
+  )}
+</div>
   );
 }
 

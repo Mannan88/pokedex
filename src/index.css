@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+.loader-div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url("/src/assets/pokeball.png");
+  background-repeat: no-repeat;
+  background-size:cover ;
+  margin: 2rem auto;
+transform-origin: center center;
+animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%   { transform: rotate(0deg) translateY(0); }
+  15%  { transform: rotate(-15deg) translateY(-2px); }
+  30%  { transform: rotate(15deg) translateY(-2px); }
+  45%  { transform: rotate(-10deg) translateY(-1px); }
+  60%  { transform: rotate(10deg) translateY(1px); }
+  75%  { transform: rotate(-5deg) translateY(0); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
